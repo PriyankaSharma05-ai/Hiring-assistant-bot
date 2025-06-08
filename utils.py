@@ -1,8 +1,6 @@
 import openai
 
-import os
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
+openai.api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # Replace with your actual key
 
 def call_llm(prompt):
     try:
@@ -16,6 +14,7 @@ def call_llm(prompt):
         return response.choices[0].message['content']
     except Exception as e:
         return f"❌ Error calling OpenAI API: {e}"
+
 
 
 
